@@ -10,10 +10,6 @@ jobs:
       SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
     steps:
       - name: echo hello
-      - uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-          channel: "#test"
         run: echo hello world
       - name: multi line scrip
         run: |
@@ -24,6 +20,10 @@ jobs:
           import platform
           print (platform.processor())
         shell: python
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: "#test"
   run-windows-commands:
     runs-on: windows-latest
     steps:
