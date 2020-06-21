@@ -9,10 +9,12 @@ jobs:
     steps:
       - name: echo hello
         run: echo hello world
+          echo ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: multi line scrip
         run: |
           node -v
           npm -v
+          echo ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: python cmd
         run: |
           import platform
@@ -27,4 +29,5 @@ jobs:
         with:
           status: ${{ job.status }}
           channel: "#git"
+          run: echo ${{ secrets.SLACK_WEBHOOK_URL }}
         if: always()
