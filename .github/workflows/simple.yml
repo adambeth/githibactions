@@ -20,11 +20,7 @@ jobs:
           import platform
           print (platform.processor())
         shell: python
-      - uses: act10ns/slack@v1
-        name: Slack
-        with:
-          status: ${{ job.status }}
-          channel: "#test"
+
   run-windows-commands:
     runs-on: windows-latest
     steps:
@@ -33,3 +29,11 @@ jobs:
       - name: use bash
         run: pwd
         shell: bash
+  slack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: act10ns/slack@v1
+        name: Slack
+        with:
+          status: ${{ job.status }}
+          channel: "#test"
