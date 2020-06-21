@@ -21,6 +21,7 @@ jobs:
           print (platform.processor())
         shell: python
       - uses: act10ns/slack@v1
+        name: Slack
         with:
           status: ${{ job.status }}
           channel: "#test"
