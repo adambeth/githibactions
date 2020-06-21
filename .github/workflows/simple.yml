@@ -4,8 +4,16 @@ on: [push]
 jobs:
   run-shell-cmd:
     runs-on: ubuntu-latest
+    env:
+      REPOSITORY_URL: docker.pkg.github.com
+      IMAGE_NAME: ${{ github.repository }}/alerta-cli
+      SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
     steps:
       - name: echo hello
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: "#test"
         run: echo hello world
       - name: multi line scrip
         run: |
