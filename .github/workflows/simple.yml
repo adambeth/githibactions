@@ -4,6 +4,8 @@ on: [push]
 jobs:
   run-shell-cmd:
     runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
       - name: echo hello
         run: echo hello world
@@ -18,9 +20,15 @@ jobs:
         shell: python
   run-windows-commands:
     runs-on: windows-latest
+    needs: [run-shell-cmd]
     steps:
       - name: directory powershell
         run: Get-Location
       - name: use bash
         run: pwd
         shell: bash
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: "#git"
+        if: always()
