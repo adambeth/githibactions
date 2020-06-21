@@ -28,6 +28,7 @@ jobs:
         run: pwd
         shell: bash
       - uses: act10ns/slack@v1
+        name: slack
         with:
           status: ${{ job.status }}
           channel: "#git"
