@@ -26,7 +26,8 @@ jobs:
       - uses: act10ns/slack@v1
       - name: slack
         with:
+          run: echo ${{ secrets.SLACK_WEBHOOK_URL }}
           status: ${{ job.status }}
           channel: "#test"
-        run: echo ${{ secrets.SLACK_WEBHOOK_URL }}
+
         if: always()
