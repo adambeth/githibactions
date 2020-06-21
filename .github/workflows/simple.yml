@@ -4,29 +4,23 @@ on: [push]
 jobs:
   run-shell-cmd:
     runs-on: ubuntu-latest
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
       - name: echo hello
         run: echo hello world
-          echo ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: multi line scrip
         run: |
           node -v
           npm -v
-          echo ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: python cmd
         run: |
           import platform
           print (platform.processor())
         shell: python
   run-windows-commands:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - uses: act10ns/slack@v1
-      - name: slack
-        with:
-          status: ${{ job.status }}
-          channel: "#test"
-          run: echo ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: always()
+      - name: directory powershell
+        run: Get-Location
+      - name: use bash
+        run: pwd
+        shell: bash
