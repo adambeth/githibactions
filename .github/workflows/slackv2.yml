@@ -1,4 +1,4 @@
-name: Slack Demo Salt
+name: Slack Demo Salt v2
 on: push
 env:
   SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Notify slack
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
         uses: pullreminders/slack-action@master
         with:
           args: '{\"channel\":\"C0166RR1AJV\",\"text\":\"Hello world\"}'
