@@ -19,7 +19,7 @@ jobs:
           import platform
           print (platform.processor())
         shell: python
-      - uses: act10ns/slack@v1
+      - uses: actions/slack@v1
         name: Slack
         with:
           status: ${{ job.status }}
