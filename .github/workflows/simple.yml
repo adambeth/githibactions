@@ -5,8 +5,6 @@ jobs:
   run-shell-cmd:
     runs-on: ubuntu-latest
     env:
-      REPOSITORY_URL: docker.pkg.github.com
-      IMAGE_NAME: ${{ github.repository }}/alerta-cli
       SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
     steps:
       - name: echo hello
@@ -15,23 +13,12 @@ jobs:
         run: |
           node -v
           npm -v
+          echo ${SLACK_WEBHOOK_URL}
       - name: python cmd
         run: |
           import platform
           print (platform.processor())
         shell: python
-
-  run-windows-commands:
-    runs-on: windows-latest
-    steps:
-      - name: directory powershell
-        run: Get-Location
-      - name: use bash
-        run: pwd
-        shell: bash
-  slack:
-    runs-on: ubuntu-latest
-    steps:
       - uses: act10ns/slack@v1
         name: Slack
         with:
