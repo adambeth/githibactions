@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Actions
         id: greet
-        uses: actions/hello-world-javascript-action@master@v1
+        uses: actions/hello-world-javascript-action@master
         with:
           who-to-greet: "Mona the Octocat"
       - name: log greeting time
