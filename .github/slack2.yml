@@ -1,4 +1,4 @@
-name: Slack Demo Salt v2
+name: Slack Demo Salt V2 - Custom Slack Messages
 on: push
 env:
   SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
