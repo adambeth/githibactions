@@ -9,9 +9,9 @@ jobs:
 
       - name: change-node-v
         uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: '6'
       - name: log-node-v
         run: node -v
-      - name: change-node-v
