@@ -7,9 +7,4 @@ jobs:
     steps:
       - name: log node
         run: node -v
-      - name : changhe node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '6'
-      - name: log node
-        run: node -v
+
