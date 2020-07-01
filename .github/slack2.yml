@@ -6,7 +6,7 @@ jobs:
   log-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Notify slack again
+      - name: Notify slack again and again
         env:
           SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
         uses: pullreminders/slack-action@master
