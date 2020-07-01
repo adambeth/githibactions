@@ -12,10 +12,8 @@ jobs:
         with:
           status: ${{job.status}}
         if: always()
-      - name: break
-        run: echo hellllll
       - uses: act10ns/slack@v1
-        name: PipelineStep
+        name: This is a pipeline Step
         id: steps
         with:
           status: ${{ job.status }}
