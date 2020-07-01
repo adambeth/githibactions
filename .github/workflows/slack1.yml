@@ -21,7 +21,7 @@ jobs:
         if: always()
       - uses: act10ns/slack@v1
         name: Pipeline Success Bitches
-        id: steps
+        id: step_steps
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
