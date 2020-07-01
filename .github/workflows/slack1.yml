@@ -1,4 +1,4 @@
-name: Slack Demo Salt
+name: Slack Demo Salt!
 on: push
 env:
   SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
