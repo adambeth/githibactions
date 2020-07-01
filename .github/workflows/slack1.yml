@@ -13,7 +13,7 @@ jobs:
           status: ${{job.status}}
         if: always()
       - uses: act10ns/slack@v1
-        name: This is a pipeline Step
+        name: This is a pipeline Step!
         id: steps
         with:
           status: ${{ job.status }}
