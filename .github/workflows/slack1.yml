@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Pipeline_complete
-        id: pipe
+        id: pipelineComplete
         uses: act10ns/slack@v1
         with:
           status: ${{job.status}}
@@ -15,7 +15,7 @@ jobs:
       - name: break
         run: echo hellllll
       - uses: act10ns/slack@v1
-        name: steps1
+        name: PipelineStep
         id: steps
         with:
           status: ${{ job.status }}
