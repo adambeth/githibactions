@@ -2,7 +2,7 @@ on: push
 name: Slack Notification https://github.com/marketplace/actions/action-slack
 jobs:
   slackNotification:
-    name: Slack Notification3
+    name: Slack Notification3!
     runs-on: ubuntu-latest
     steps:
       - uses: 8398a7/action-slack@v3
