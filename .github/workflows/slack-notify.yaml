@@ -10,7 +10,6 @@ jobs:
       uses: rtCamp/action-slack-notify@v2.0.2
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
         SLACK_CHANNEL: general
         SLACK_COLOR: '#3278BD'
         SLACK_MESSAGE: 'SaltMan is here'
