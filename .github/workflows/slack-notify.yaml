@@ -1,5 +1,5 @@
 on: push
-name: Slack Notification Demo_More Verbose!
+name: Slack Notification Demo_More Verbose2
 jobs:
   slackNotification:
     name: Slack Notification
